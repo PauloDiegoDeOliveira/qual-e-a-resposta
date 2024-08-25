@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualEaResposta.Api", "QualEaResposta.Api\QualEaResposta.Api.csproj", "{91A1510E-C2A7-4CDA-8E0B-62C5C83A7C3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualEaResposta.Application", "QualEaResposta.Application\QualEaResposta.Application.csproj", "{DBC3697F-93F1-4288-84C4-CBA57D43979C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualEaResposta.Domain", "QualEaResposta.Domain\QualEaResposta.Domain.csproj", "{34074FC5-BEC6-4FBE-A71A-06C2A4DC683B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualEaResposta.Domain.Core", "QualEaResposta.Domain.Core\QualEaResposta.Domain.Core.csproj", "{4A3E92F1-5447-4AE0-80E2-8580375793A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualEaResposta.Domain.Services", "QualEaResposta.Domain.Services\QualEaResposta.Domain.Services.csproj", "{A3DB37D6-281F-43B9-A2DB-95EE27B51230}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualEaResposta.Infrastructure", "QualEaResposta.Infrastructure\QualEaResposta.Infrastructure.csproj", "{56D5CB4E-C986-4E79-AE54-6BAC2101418B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91A1510E-C2A7-4CDA-8E0B-62C5C83A7C3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91A1510E-C2A7-4CDA-8E0B-62C5C83A7C3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91A1510E-C2A7-4CDA-8E0B-62C5C83A7C3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91A1510E-C2A7-4CDA-8E0B-62C5C83A7C3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBC3697F-93F1-4288-84C4-CBA57D43979C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBC3697F-93F1-4288-84C4-CBA57D43979C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBC3697F-93F1-4288-84C4-CBA57D43979C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBC3697F-93F1-4288-84C4-CBA57D43979C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34074FC5-BEC6-4FBE-A71A-06C2A4DC683B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34074FC5-BEC6-4FBE-A71A-06C2A4DC683B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34074FC5-BEC6-4FBE-A71A-06C2A4DC683B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34074FC5-BEC6-4FBE-A71A-06C2A4DC683B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A3E92F1-5447-4AE0-80E2-8580375793A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A3E92F1-5447-4AE0-80E2-8580375793A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A3E92F1-5447-4AE0-80E2-8580375793A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A3E92F1-5447-4AE0-80E2-8580375793A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3DB37D6-281F-43B9-A2DB-95EE27B51230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3DB37D6-281F-43B9-A2DB-95EE27B51230}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3DB37D6-281F-43B9-A2DB-95EE27B51230}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3DB37D6-281F-43B9-A2DB-95EE27B51230}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56D5CB4E-C986-4E79-AE54-6BAC2101418B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56D5CB4E-C986-4E79-AE54-6BAC2101418B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56D5CB4E-C986-4E79-AE54-6BAC2101418B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56D5CB4E-C986-4E79-AE54-6BAC2101418B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F2AE2CA4-DA43-4449-98BA-B4435D906320}
+	EndGlobalSection
+EndGlobal
