@@ -2,7 +2,7 @@
 {
     public interface IPerguntaRepository
     {
-        Task<Pergunta> GetByIdAsync(Guid id);
+        Task<Pergunta> GetByIdAsync(Guid id); // Não permite retorno nulo
 
         Task<IEnumerable<Pergunta>> GetAllAsync();
 

@@ -1,6 +1,10 @@
 ﻿global using AutoMapper;
 global using QualEaResposta.Application.Dtos;
+global using QualEaResposta.Application.Dtos.Pergunta;
 global using QualEaResposta.Application.Interfaces;
 global using QualEaResposta.Domain.Core.Interfaces.Repositories;
 global using QualEaResposta.Domain.Core.Interfaces.Services;
+global using QualEaResposta.Domain.Enums;
 global using QualEaResposta.Domain.Model;
+global using System.ComponentModel.DataAnnotations;
+global using System.Text.Json.Serialization;

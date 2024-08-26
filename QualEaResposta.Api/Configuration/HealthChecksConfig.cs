@@ -2,7 +2,7 @@
 {
     public static class HealthChecksConfig
     {
-        private static readonly string[] tags = { "db", "data" };
+        private static readonly string[] tags = ["db", "data"];
 
         public static void AddHealthChecksConfiguration(this IServiceCollection services, IConfiguration configuration)
         {

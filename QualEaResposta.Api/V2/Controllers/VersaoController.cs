@@ -1,42 +1,53 @@
 ﻿namespace QualEaResposta.Api.V2.Controllers
 {
     [ApiVersion("2.0")]
-    [Route("api/v{version:apiVersion}/versao")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
-    public class VersaoController(IWebHostEnvironment environment,
-                                  INotificador notifier,
-                                  IUser user) : MainController(notifier, user)
+    public class VersaoController : MainController
     {
-        private readonly IWebHostEnvironment environment = environment;
+        private readonly IWebHostEnvironment _environment;
+
+        public VersaoController(IWebHostEnvironment environment,
+                                INotificationService notificationService,
+                                IUser user) : base(notificationService, user)
+        {
+            _environment = environment;
+        }
 
         /// <summary>
         /// Informa a versão da API e o ambiente.
         /// </summary>
-        /// <returns></returns>
+        /// <param name="version">A versão atual da API</param>
+        /// <returns>Informações sobre a versão da API e o ambiente atual</returns>
         [HttpGet]
+        [ProducesResponseType(typeof(ViewApiVersionDto), StatusCodes.Status200OK)] // Ajustado para ViewApiVersionDto
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult Valor(ApiVersion version)
         {
+            // Verificação se a versão foi fornecida corretamente
             if (version == null)
             {
                 NotificarErro("A versão da API não foi fornecida corretamente.");
-                return CustomResponse();
+                return ResponderPadronizado();
             }
 
-            var versionInfo = new
+            // Coleta de informações sobre a versão da API e o ambiente
+            var versionInfo = new ViewApiVersionDto
             {
                 ApiVersion = version.ToString(),
-                Environment = environment.EnvironmentName,
+                Environment = _environment.EnvironmentName,
                 Timestamp = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"),
-                User = AppUser.GetUserEmail(),
+                User = _appUser.GetUserEmail(),
             };
 
+            // Verificação de operação válida
             if (OperacaoValida())
             {
                 NotificarMensagem("Versão da API retornada com sucesso.");
-                return CustomResponse(versionInfo);
+                return ResponderPadronizado(versionInfo);
             }
 
-            return CustomResponse();
+            return ResponderPadronizado();
         }
     }
 }

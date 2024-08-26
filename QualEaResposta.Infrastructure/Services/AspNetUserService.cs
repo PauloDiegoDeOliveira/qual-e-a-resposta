@@ -1,6 +1,6 @@
 ﻿namespace QualEaResposta.Infrastructure.Services
 {
-    public class AspNetUser(IHttpContextAccessor accessor) : IUser
+    public class AspNetUserService(IHttpContextAccessor accessor) : IUser
     {
         private readonly IHttpContextAccessor accessor = accessor ?? new HttpContextAccessor();
 

@@ -1,17 +1,16 @@
-﻿using QualEaResposta.Domain.Core.Interfaces.Repositories;
-
-namespace QualEaResposta.Infrastructure.Data.Repositories
+﻿namespace QualEaResposta.Infrastructure.Data.Repositories
 {
     public class PerguntaRepository(ApplicationDbContext context) : IPerguntaRepository
     {
-        private readonly ApplicationDbContext _context = context ?? throw new ArgumentNullException(nameof(context));
+        private readonly ApplicationDbContext _context = context;
 
-        public async Task<Pergunta?> GetByIdAsync(Guid id)
+        public async Task<Pergunta> GetByIdAsync(Guid id)
         {
-            // Use "?" para indicar que pode retornar null
-            return await _context.Perguntas
+            var pergunta = await _context.Perguntas
                 .Include(p => p.Alternativas)
                 .FirstOrDefaultAsync(p => p.Id == id);
+
+            return pergunta ?? new Pergunta(); // Retorna um novo objeto Pergunta se não encontrar
         }
 
         public async Task<IEnumerable<Pergunta>> GetAllAsync()
@@ -25,7 +24,8 @@ namespace QualEaResposta.Infrastructure.Data.Repositories
         {
             if (pergunta == null)
             {
-                throw new ArgumentNullException(nameof(pergunta)); // Verifica se o objeto não é nulo
+                // Se a pergunta for nula, não faz nada
+                return;
             }
 
             await _context.Perguntas.AddAsync(pergunta);

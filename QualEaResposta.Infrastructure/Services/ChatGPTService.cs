@@ -48,9 +48,18 @@
             {
                 string jsonResponse = await response.Content.ReadAsStringAsync();
                 using JsonDocument jsonDoc = JsonDocument.Parse(jsonResponse);
-                return jsonDoc.RootElement.GetProperty("choices")[0].GetProperty("message").GetProperty("content").GetString();
+
+                // Verifica a estrutura JSON antes de acessar
+                if (jsonDoc.RootElement.TryGetProperty("choices", out JsonElement choices) &&
+                    choices.GetArrayLength() > 0 &&
+                    choices[0].TryGetProperty("message", out JsonElement message) &&
+                    message.TryGetProperty("content", out JsonElement contentElement))
+                {
+                    return contentElement.GetString() ?? string.Empty;
+                }
             }
 
+            // Retorna uma string vazia se algo deu errado ou se não encontrou a resposta correta
             return string.Empty;
         }
     }
