@@ -1,44 +1,70 @@
-var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+try
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+    // Configuração do Serilog para logging
+    SerilogConfig.AddSerilogApi();
+    builder.Host.UseSerilog(Log.Logger);
+    Log.Warning("Iniciando API");
+
+    // Configurações e ambiente da aplicação
+    ConfigurationManager configurationManager = builder.Configuration;
+    IWebHostEnvironment environment = builder.Environment;
+    Log.Warning("Ambiente atual: {EnvironmentName}", environment.EnvironmentName);
+
+    // Registro de serviços
+    builder.Services.AddControllers();
+    builder.Services.AddAutoMapperConfiguration();
+    builder.Services.AddDatabaseConfiguration(configurationManager);
+    builder.Services.AddSwaggerConfiguration();
+    builder.Services.AddCorsConfiguration();
+    builder.Services.AddVersionConfiguration();
+    builder.Services.AddHealthChecksConfiguration(configurationManager);
+    builder.Services.Configure<ApiBehaviorOptions>(options => { options.SuppressModelStateInvalidFilter = true; });
+
+    // Construção da aplicação Web
+    WebApplication app = builder.Build();
+    Log.Warning("Aplicação construída.");
+
+    // Obter o IApiVersionDescriptionProvider para uso na configuração do Swagger
+    IApiVersionDescriptionProvider provider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
+
+    // Configuração do pipeline de requisições HTTP
+    if (app.Environment.IsDevelopment())
+    {
+        app.UseDeveloperExceptionPage();
+        app.UseCors("Development");
+    }
+    else
+    {
+        app.UseCors(app.Environment.IsStaging() ? "Staging" : "Production");
+
+        if (app.Environment.IsProduction())
+        {
+            app.UseHsts();
+        }
+
+        app.UseHttpsRedirection();
+    }
+
+    // Configurações adicionais e mapeamento de rotas
+    app.UseStaticFiles(); // Middleware para servir arquivos estáticos
+    app.UseRouting(); // Middleware de roteamento deve vir após arquivos estáticos
+    app.UseSwaggerConfiguration(provider); // Passando o provider para configuração do Swagger
+    app.UseDatabaseConfiguration(); // Middleware de configuração do banco de dados
+    app.UseHealthChecksConfiguration(); // Health Checks devem ser configurados antes dos endpoints
+    app.MapControllers(); // Mapeia os endpoints do controlador
+
+    // Iniciando a aplicação
+    Log.Warning("API iniciada. Aguardando requisições...");
+    app.Run();
 }
-
-app.UseHttpsRedirection();
-
-var summaries = new[]
+catch (Exception ex)
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
+    Log.Fatal(ex, "Uma exceção não tratada {ExceptionType} ocorreu, levando ao término da API. Detalhes: {ExceptionMessage}, Pilha de Chamadas: {StackTrace}", ex.GetType().Name, ex.Message, ex.StackTrace);
+}
+finally
 {
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast")
-.WithOpenApi();
-
-app.Run();
-
-internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    Log.Information("A execução da API foi concluída às {DateTime}. Fechando e liberando recursos...", DateTime.Now);
+    Log.CloseAndFlush();
 }

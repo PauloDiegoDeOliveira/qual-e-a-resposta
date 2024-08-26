@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualEaResposta.Api", "QualEaResposta.Api\QualEaResposta.Api.csproj", "{91A1510E-C2A7-4CDA-8E0B-62C5C83A7C3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualEaResposta.Api", "QualEaResposta.Api\QualEaResposta.Api.csproj", "{91A1510E-C2A7-4CDA-8E0B-62C5C83A7C3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualEaResposta.Application", "QualEaResposta.Application\QualEaResposta.Application.csproj", "{DBC3697F-93F1-4288-84C4-CBA57D43979C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualEaResposta.Application", "QualEaResposta.Application\QualEaResposta.Application.csproj", "{DBC3697F-93F1-4288-84C4-CBA57D43979C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualEaResposta.Domain", "QualEaResposta.Domain\QualEaResposta.Domain.csproj", "{34074FC5-BEC6-4FBE-A71A-06C2A4DC683B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualEaResposta.Domain", "QualEaResposta.Domain\QualEaResposta.Domain.csproj", "{34074FC5-BEC6-4FBE-A71A-06C2A4DC683B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualEaResposta.Domain.Core", "QualEaResposta.Domain.Core\QualEaResposta.Domain.Core.csproj", "{4A3E92F1-5447-4AE0-80E2-8580375793A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualEaResposta.Domain.Services", "QualEaResposta.Domain.Services\QualEaResposta.Domain.Services.csproj", "{A3DB37D6-281F-43B9-A2DB-95EE27B51230}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualEaResposta.Domain.Services", "QualEaResposta.Domain.Services\QualEaResposta.Domain.Services.csproj", "{A3DB37D6-281F-43B9-A2DB-95EE27B51230}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualEaResposta.Infrastructure", "QualEaResposta.Infrastructure\QualEaResposta.Infrastructure.csproj", "{56D5CB4E-C986-4E79-AE54-6BAC2101418B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualEaResposta.Infrastructure", "QualEaResposta.Infrastructure\QualEaResposta.Infrastructure.csproj", "{56D5CB4E-C986-4E79-AE54-6BAC2101418B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualEaResposta.Domain.Core", "QualEaResposta.Domain.Core\QualEaResposta.Domain.Core.csproj", "{7E7D4C7D-C120-4B37-94EA-6FBF58FB43A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +33,6 @@ Global
 		{34074FC5-BEC6-4FBE-A71A-06C2A4DC683B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34074FC5-BEC6-4FBE-A71A-06C2A4DC683B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34074FC5-BEC6-4FBE-A71A-06C2A4DC683B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4A3E92F1-5447-4AE0-80E2-8580375793A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4A3E92F1-5447-4AE0-80E2-8580375793A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4A3E92F1-5447-4AE0-80E2-8580375793A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4A3E92F1-5447-4AE0-80E2-8580375793A9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A3DB37D6-281F-43B9-A2DB-95EE27B51230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A3DB37D6-281F-43B9-A2DB-95EE27B51230}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3DB37D6-281F-43B9-A2DB-95EE27B51230}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{56D5CB4E-C986-4E79-AE54-6BAC2101418B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56D5CB4E-C986-4E79-AE54-6BAC2101418B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56D5CB4E-C986-4E79-AE54-6BAC2101418B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E7D4C7D-C120-4B37-94EA-6FBF58FB43A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E7D4C7D-C120-4B37-94EA-6FBF58FB43A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E7D4C7D-C120-4B37-94EA-6FBF58FB43A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E7D4C7D-C120-4B37-94EA-6FBF58FB43A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
