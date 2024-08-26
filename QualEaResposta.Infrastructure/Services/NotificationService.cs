@@ -48,7 +48,7 @@
 
         public bool TemNotificacao()
         {
-            return _notificacoes.Any();
+            return _notificacoes.Count != 0;
         }
 
         public List<Notificacao> ObterNotificacoes()

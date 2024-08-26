@@ -1,4 +1,4 @@
-﻿namespace QualEaResposta.Application.Dtos
+﻿namespace QualEaResposta.Application.Dtos.Alternativa
 {
     /// <summary>
     /// DTO para envio de uma alternativa associada a uma pergunta.

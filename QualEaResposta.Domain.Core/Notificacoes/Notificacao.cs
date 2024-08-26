@@ -1,4 +1,4 @@
-﻿namespace QualEaResposta.Domain.Notificacoes
+﻿namespace QualEaResposta.Domain.Core.Notificacoes
 {
     public class Notificacao(string mensagem, ETipoNotificacao tipo = ETipoNotificacao.Erro)
     {

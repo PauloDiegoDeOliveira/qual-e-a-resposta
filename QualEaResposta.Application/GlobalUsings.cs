@@ -1,5 +1,5 @@
 ﻿global using AutoMapper;
-global using QualEaResposta.Application.Dtos;
+global using QualEaResposta.Application.Dtos.Alternativa;
 global using QualEaResposta.Application.Dtos.Pergunta;
 global using QualEaResposta.Application.Interfaces;
 global using QualEaResposta.Domain.Core.Interfaces.Repositories;

@@ -1,6 +1,4 @@
-﻿using QualEaResposta.Application.Dtos.Alternativa;
-
-namespace QualEaResposta.Application.Dtos.Pergunta
+﻿namespace QualEaResposta.Application.Dtos.Pergunta
 {
     /// <summary>
     /// DTO para exibição de uma pergunta, incluindo suas alternativas e informações de estado.

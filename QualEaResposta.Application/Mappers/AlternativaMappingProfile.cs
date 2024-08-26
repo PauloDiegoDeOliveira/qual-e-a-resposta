@@ -1,6 +1,4 @@
-﻿using QualEaResposta.Application.Dtos.Alternativa;
-
-namespace QualEaResposta.Application.Mappers
+﻿namespace QualEaResposta.Application.Mappers
 {
     /// <summary>
     /// Configuração de mapeamento para a entidade Alternativa.
