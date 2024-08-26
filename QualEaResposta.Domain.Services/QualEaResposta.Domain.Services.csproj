@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\QualEaResposta.Domain.Core\QualEaResposta.Domain.Core.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -6,4 +6,15 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\QualEaResposta.Domain.Core\QualEaResposta.Domain.Core.csproj" />
+    <ProjectReference Include="..\QualEaResposta.Domain\QualEaResposta.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Dtos\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Mappers\Interfaces\" />
+  </ItemGroup>
+
 </Project>

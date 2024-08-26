@@ -6,4 +6,16 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\QualEaResposta.Application\QualEaResposta.Application.csproj" />
+    <ProjectReference Include="..\QualEaResposta.Domain.Core\QualEaResposta.Domain.Core.csproj" />
+    <ProjectReference Include="..\QualEaResposta.Domain.Services\QualEaResposta.Domain.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="CrossCutting\Extensions\Ioc\" />
+    <Folder Include="CrossCutting\Options\" />
+    <Folder Include="Data\Repositories\" />
+  </ItemGroup>
+
 </Project>
