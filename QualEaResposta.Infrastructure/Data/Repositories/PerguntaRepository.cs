@@ -4,26 +4,36 @@ namespace QualEaResposta.Infrastructure.Data.Repositories
 {
     public class PerguntaRepository(ApplicationDbContext context) : IPerguntaRepository
     {
-        private readonly ApplicationDbContext context = context;
+        private readonly ApplicationDbContext _context = context ?? throw new ArgumentNullException(nameof(context));
 
-        public async Task<Pergunta> GetByIdAsync(Guid id)
+        public async Task<Pergunta?> GetByIdAsync(Guid id)
         {
-            return await context.Perguntas.Include(p => p.Alternativas).FirstOrDefaultAsync(p => p.Id == id);
+            // Use "?" para indicar que pode retornar null
+            return await _context.Perguntas
+                .Include(p => p.Alternativas)
+                .FirstOrDefaultAsync(p => p.Id == id);
         }
 
         public async Task<IEnumerable<Pergunta>> GetAllAsync()
         {
-            return await context.Perguntas.Include(p => p.Alternativas).ToListAsync();
+            return await _context.Perguntas
+                .Include(p => p.Alternativas)
+                .ToListAsync();
         }
 
         public async Task AddAsync(Pergunta pergunta)
         {
-            await context.Perguntas.AddAsync(pergunta);
+            if (pergunta == null)
+            {
+                throw new ArgumentNullException(nameof(pergunta)); // Verifica se o objeto não é nulo
+            }
+
+            await _context.Perguntas.AddAsync(pergunta);
         }
 
         public async Task SaveChangesAsync()
         {
-            await context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
     }
 }
