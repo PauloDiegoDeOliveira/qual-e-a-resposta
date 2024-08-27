@@ -1,5 +1,14 @@
 ﻿namespace QualEaResposta.Api.V1.Controllers
 {
+    /// <summary>
+    /// Controlador para gerenciar perguntas na versão 1.0 da API.
+    /// </summary>
+    /// <remarks>
+    /// Inicializa uma nova instância da classe <see cref="PerguntasController"/>.
+    /// </remarks>
+    /// <param name="perguntaService">Serviço de perguntas.</param>
+    /// <param name="notificationService">Serviço de notificação.</param>
+    /// <param name="appUser">Informações sobre o usuário autenticado.</param>
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
@@ -10,10 +19,10 @@
         private readonly IPerguntaService _perguntaService = perguntaService;
 
         /// <summary>
-        /// Obtem uma pergunta pelo ID.
+        /// Obtém uma pergunta pelo ID.
         /// </summary>
-        /// <param name="id">ID da pergunta</param>
-        /// <returns>Pergunta correspondente ao ID fornecido</returns>
+        /// <param name="id">ID da pergunta.</param>
+        /// <returns>Pergunta correspondente ao ID fornecido.</returns>
         [HttpGet("{id:guid}")]
         [ProducesResponseType(typeof(ViewPerguntaDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -32,8 +41,8 @@
         /// <summary>
         /// Cria uma nova pergunta.
         /// </summary>
-        /// <param name="perguntaDTO">DTO da pergunta</param>
-        /// <returns>Resultado da criação da pergunta</returns>
+        /// <param name="perguntaDTO">DTO da pergunta.</param>
+        /// <returns>Resultado da criação da pergunta.</returns>
         [HttpPost]
         [ProducesResponseType(typeof(ViewPerguntaDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

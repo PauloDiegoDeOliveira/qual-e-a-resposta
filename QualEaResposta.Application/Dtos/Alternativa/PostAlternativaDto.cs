@@ -22,6 +22,6 @@
         /// <example>true</example>
         [JsonPropertyName("correta")]
         [Display(Name = "correta")]
-        public bool ECorreta { get; set; } // Incluído se necessário durante a criação
+        public bool Correta { get; set; } // Incluído se necessário durante a criação
     }
 }

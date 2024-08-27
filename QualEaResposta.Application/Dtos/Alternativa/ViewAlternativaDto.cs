@@ -22,7 +22,7 @@
         /// Indica se esta alternativa é a resposta correta.
         /// </summary>
         /// <example>true</example>
-        public bool ECorreta { get; set; }
+        public bool Correta { get; set; }
 
         /// <summary>
         /// Status atual da alternativa.

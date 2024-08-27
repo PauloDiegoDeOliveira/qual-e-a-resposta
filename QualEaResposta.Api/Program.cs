@@ -3,7 +3,7 @@ try
     WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
     // Configuração do Serilog para logging
-    SerilogConfig.AddSerilogApi();
+    SerilogConfig.AddSerilogApi(builder.Services); // Corrigido para passar 'builder.Services'
     builder.Host.UseSerilog(Log.Logger);
     Log.Warning("Iniciando API");
 
@@ -17,7 +17,7 @@ try
     builder.Services.AddAutoMapperConfiguration();
     builder.Services.AddDatabaseConfiguration(configurationManager);
     builder.Services.AddSwaggerConfiguration();
-    builder.Services.AddCorsConfiguration();
+    builder.Services.AddCorsConfiguration(environment);
     builder.Services.AddVersionConfiguration();
     builder.Services.AddHealthChecksConfiguration(configurationManager);
     builder.Services.Configure<ApiBehaviorOptions>(options => { options.SuppressModelStateInvalidFilter = true; });

@@ -13,7 +13,7 @@
         /// <summary>
         /// Indica se esta alternativa é a correta para a pergunta associada.
         /// </summary>
-        public bool ECorreta { get; set; }
+        public bool Correta { get; set; }
 
         /// <summary>
         /// Identificador da pergunta associada a esta alternativa.

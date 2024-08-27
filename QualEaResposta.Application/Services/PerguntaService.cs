@@ -32,7 +32,7 @@
                 .Select(texto => new Alternativa
                 {
                     TextoAlternativa = texto!,
-                    ECorreta = texto == respostaCorretaTexto
+                    Correta = texto == respostaCorretaTexto
                 }).ToList();
 
             // Criação da entidade Pergunta
