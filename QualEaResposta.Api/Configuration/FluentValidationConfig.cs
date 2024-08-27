@@ -1,4 +1,6 @@
-﻿namespace QualEaResposta.Api.Configuration
+﻿using QualEaResposta.Application.Validations;
+
+namespace QualEaResposta.Api.Configuration
 {
     /// <summary>
     /// Configuração para FluentValidation.
@@ -61,11 +63,7 @@
         private static void RegisterValidators(IServiceCollection services)
         {
             // Registro automático de todos os validadores presentes no assembly
-            //services.AddValidatorsFromAssemblyContaining<PostPerguntaDtoValidator>();
-            //services.AddValidatorsFromAssemblyContaining<PutPerguntaDtoValidator>();
-
-            //services.AddValidatorsFromAssemblyContaining<PostAlternativaDtoValidator>();
-            //services.AddValidatorsFromAssemblyContaining<PutAlternativaDtoValidator>();
+            services.AddValidatorsFromAssemblyContaining<PostPerguntaValidator>();
 
             // Configuração global do FluentValidation
             services.AddFluentValidationAutoValidation();

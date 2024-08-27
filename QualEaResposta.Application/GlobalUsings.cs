@@ -1,4 +1,6 @@
 ﻿global using AutoMapper;
+global using FluentValidation;
+global using Microsoft.Extensions.Logging;
 global using QualEaResposta.Application.Dtos.Alternativa;
 global using QualEaResposta.Application.Dtos.Pergunta;
 global using QualEaResposta.Application.Interfaces;

@@ -32,3 +32,4 @@ global using System.Globalization;
 global using System.Net.Mime;
 global using System.Reflection;
 global using System.Text.Json.Serialization;
+global using ILogger = Serilog.ILogger;

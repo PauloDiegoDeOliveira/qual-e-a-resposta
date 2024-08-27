@@ -14,6 +14,7 @@ try
 
     // Registro de serviços
     builder.Services.AddControllers();
+    builder.Services.AddFluentValidationConfiguration();
     builder.Services.AddAutoMapperConfiguration();
     builder.Services.AddDatabaseConfiguration(configurationManager);
     builder.Services.AddDependencyInjectionConfiguration(configurationManager);
