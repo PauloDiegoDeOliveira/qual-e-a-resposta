@@ -36,12 +36,12 @@
 
             #endregion Serviços Transient
 
-            #region Outros Serviços
+            #region Configuração de HttpClient
 
             // Registrar o HttpClient necessário para o ChatGPTService
             services.AddHttpClient<IChatGPTService, ChatGPTService>();
 
-            #endregion Outros Serviços
+            #endregion Configuração de HttpClient
         }
     }
 }
