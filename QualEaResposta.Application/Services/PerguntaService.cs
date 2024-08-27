@@ -57,7 +57,7 @@
         /// <returns>Um <see cref="Task"/> que representa a operação assíncrona, contendo o DTO da pergunta ou null se não for encontrada.</returns>
         public async Task<ViewPerguntaDto?> GetPerguntaByIdAsync(Guid id)
         {
-            var pergunta = await _perguntaRepository.GetByIdAsync(id);
+            Pergunta? pergunta = await _perguntaRepository.GetByIdAsync(id);
 
             if (pergunta == null)
                 return null;
