@@ -7,16 +7,19 @@
     /// Inicializa uma nova instância da classe <see cref="PerguntasController"/>.
     /// </remarks>
     /// <param name="perguntaService">Serviço de perguntas.</param>
+    /// <param name="chatGPTService">Serviço para interagir com o ChatGPT.</param>
     /// <param name="notificationService">Serviço de notificação.</param>
     /// <param name="appUser">Informações sobre o usuário autenticado.</param>
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     public class PerguntasController(IPerguntaService perguntaService,
+                                     IChatGPTService chatGPTService,
                                      INotificationService notificationService,
                                      IUser appUser) : MainController(notificationService, appUser)
     {
         private readonly IPerguntaService _perguntaService = perguntaService;
+        private readonly IChatGPTService _chatGPTService = chatGPTService;
 
         /// <summary>
         /// Obtém uma pergunta pelo ID.
@@ -64,16 +67,38 @@
                                                .Cast<string?>()
                                                .ToList();
 
-            ViewPerguntaDto? createdPerguntaDTO = await _perguntaService.CreatePerguntaAsync(perguntaDTO.TextoPergunta, alternativasTexto);
+            #region Lógica para criar pergunta e persistir no banco de dados
 
-            if (createdPerguntaDTO == null)
+            //ViewPerguntaDto? createdPerguntaDTO = await _perguntaService.CreatePerguntaAsync(perguntaDTO.TextoPergunta, alternativasTexto);
+
+            //if (createdPerguntaDTO == null)
+            //{
+            //    NotificarErro("Erro ao criar a pergunta.");
+            //    return ResponderPadronizado();
+            //}
+
+            //NotificarMensagem("Pergunta criada com sucesso.");
+            //return ResponderPadronizado(createdPerguntaDTO);
+
+            #endregion Lógica para criar pergunta e persistir no banco de dados
+
+            #region Lógica para obter resposta do ChatGPT e retornar ao cliente
+
+            // Chama o serviço do ChatGPT para obter a resposta correta com base na pergunta e alternativas
+            string resposta = await _chatGPTService.GetCorrectAnswerAsync(perguntaDTO.TextoPergunta, alternativasTexto);
+
+            // Verifica se a resposta obtida está vazia ou nula, indicando uma falha ao obter a resposta do ChatGPT
+            if (string.IsNullOrWhiteSpace(resposta))
             {
-                NotificarErro("Erro ao criar a pergunta.");
+                NotificarErro("Não foi possível obter uma resposta para a pergunta.");
                 return ResponderPadronizado();
             }
 
-            NotificarMensagem("Pergunta criada com sucesso.");
-            return ResponderPadronizado(createdPerguntaDTO);
+            // Notifica sucesso e retorna a resposta do ChatGPT
+            NotificarMensagem("Resposta obtida com sucesso.");
+            return ResponderPadronizado(resposta);
+
+            #endregion Lógica para obter resposta do ChatGPT e retornar ao cliente
         }
     }
 }

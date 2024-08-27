@@ -32,8 +32,6 @@
         /// ]]>
         /// </example>
         [Display(Name = "alternativas")]
-        [Required(ErrorMessage = "É necessário fornecer pelo menos uma alternativa.")]
-        [MinLength(1, ErrorMessage = "É necessário fornecer pelo menos uma alternativa.")]
         public List<PostAlternativaDto> Alternativas { get; set; } = []; // Inicialização com uma nova lista para evitar null
     }
 }
