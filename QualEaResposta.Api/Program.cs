@@ -22,6 +22,7 @@ try
     builder.Services.AddCorsConfiguration(environment);
     builder.Services.AddVersionConfiguration();
     builder.Services.AddHealthChecksConfiguration(configurationManager);
+    builder.Services.AddHangfireConfiguration(builder.Configuration);
     builder.Services.Configure<ApiBehaviorOptions>(options => { options.SuppressModelStateInvalidFilter = true; });
 
     // Construção da aplicação Web
@@ -48,6 +49,11 @@ try
 
         app.UseHttpsRedirection();
     }
+
+    // Configuração do Dashboard do Hangfire
+    app.UseHangfireDashboardWithConfig(configurationManager);
+    var recurringJobManager = app.Services.GetRequiredService<IRecurringJobManager>();
+    HangfireJobsConfig.RegisterJobs(recurringJobManager); // Registra os jobs do Hangfire após o servidor ser inicializado
 
     // Configurações adicionais e mapeamento de rotas
     app.UseStaticFiles(); // Middleware para servir arquivos estáticos

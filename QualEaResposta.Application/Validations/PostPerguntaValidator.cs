@@ -8,8 +8,7 @@
         /// <summary>
         /// Inicializa uma nova instância da classe <see cref="PostPerguntaValidator"/>.
         /// </summary>
-        /// <param name="perguntaService">Serviço de aplicação para manipulação de perguntas.</param>
-        public PostPerguntaValidator(IPerguntaService perguntaService)
+        public PostPerguntaValidator()
         {
             RuleFor(x => x.TextoPergunta)
                 .NotEmpty()
