@@ -88,7 +88,7 @@
             {
                 Title = "Qual é a Resposta API",
                 Version = description.ApiVersion.ToString(),
-                Description = "API do projeto \"Qual é a Resposta\" que consome o ChatGPT para obter respostas a partir das perguntas enviadas.",
+                Description = "API do projeto \"Qual é a Resposta\" que consome o ChatGPT para obter respostas a partir das perguntas enviadas, seja com alternativas ou sem.",
                 Contact = new OpenApiContact
                 {
                     Name = "Paulo Diego de Oliveira",
