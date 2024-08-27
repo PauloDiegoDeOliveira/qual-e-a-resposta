@@ -3,12 +3,18 @@
     public class ChatGPTService : IChatGPTService
     {
         private readonly HttpClient httpClient;
-        private readonly string apiKey = "ChaveAqui";
+        private readonly string apiKey = "SuaKeyAqui";
+        private readonly AsyncRetryPolicy<HttpResponseMessage> retryPolicy;
 
         public ChatGPTService(HttpClient httpClient)
         {
             this.httpClient = httpClient;
-            this.httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
+            this.httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
+
+            // Definindo uma política de retry com Polly
+            retryPolicy = Policy
+                .HandleResult<HttpResponseMessage>(r => r.StatusCode == System.Net.HttpStatusCode.TooManyRequests)
+                .WaitAndRetryAsync(3, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));
         }
 
         public async Task<string> GetCorrectAnswerAsync(string question, List<string?> alternatives)
@@ -42,7 +48,8 @@
                 max_tokens = 50
             };
 
-            HttpResponseMessage response = await httpClient.PostAsJsonAsync("https://api.openai.com/v1/chat/completions", content);
+            // Usa a política de retry para fazer a chamada da API
+            HttpResponseMessage response = await retryPolicy.ExecuteAsync(() => httpClient.PostAsJsonAsync("https://api.openai.com/v1/chat/completions", content));
 
             if (response.IsSuccessStatusCode)
             {
