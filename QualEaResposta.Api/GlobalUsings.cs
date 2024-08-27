@@ -4,7 +4,6 @@ global using FluentValidation;
 global using FluentValidation.AspNetCore;
 global using Hangfire;
 global using Hangfire.MemoryStorage;
-global using HangfireBasicAuthenticationFilter;
 global using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.AspNetCore.Mvc.ModelBinding;
