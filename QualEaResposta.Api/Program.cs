@@ -16,7 +16,7 @@ try
     builder.Services.AddControllers();
     builder.Services.AddAutoMapperConfiguration();
     builder.Services.AddDatabaseConfiguration(configurationManager);
-    builder.Services.AddDependencyInjectionConfiguration();
+    builder.Services.AddDependencyInjectionConfiguration(configurationManager);
     builder.Services.AddSwaggerConfiguration();
     builder.Services.AddCorsConfiguration(environment);
     builder.Services.AddVersionConfiguration();
