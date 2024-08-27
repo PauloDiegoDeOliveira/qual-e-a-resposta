@@ -13,34 +13,35 @@
         {
             #region Serviços Scoped
 
-            // Serviços de Aplicação
             services.AddScoped<IPerguntaService, PerguntaService>();
-
-            // Serviços de Domínio
             services.AddScoped<PerguntaDomainService>();
-
-            // Repositórios e Serviços de Infraestrutura
             services.AddScoped<IPerguntaRepository, PerguntaRepository>();
-            services.AddScoped<IChatGPTService, ChatGPTService>();
             services.AddScoped<INotificationService, NotificationService>();
-            services.AddScoped<INotificador, NotificationService>(); // Se NotificationService implementa ambas as interfaces
+            services.AddScoped<INotificador, NotificationService>();
             services.AddScoped<IUser, AspNetUserService>();
 
             #endregion Serviços Scoped
 
             #region Serviços Singleton
 
-            // Acesso ao contexto HTTP - Singleton é apropriado pois deve haver apenas um contexto HTTP por requisição
+            // Acesso ao contexto HTTP
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             #endregion Serviços Singleton
 
             #region Serviços Transient
 
-            // Configuração do Swagger - Transient é apropriado para objetos de curta duração
+            // Configuração do Swagger
             services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
 
             #endregion Serviços Transient
+
+            #region Outros Serviços
+
+            // Registrar o HttpClient necessário para o ChatGPTService
+            services.AddHttpClient<IChatGPTService, ChatGPTService>();
+
+            #endregion Outros Serviços
         }
     }
 }

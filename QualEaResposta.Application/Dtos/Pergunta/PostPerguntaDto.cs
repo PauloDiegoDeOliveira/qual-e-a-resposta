@@ -21,11 +21,15 @@
         /// A lista deve conter pelo menos uma alternativa correta.
         /// </summary>
         /// <example>
+        /// <![CDATA[
         /// [
-        ///     { "TextoAlternativa": "Brasil", "ECorreta": true },
-        ///     { "TextoAlternativa": "Estados Unidos", "ECorreta": false },
-        ///     { "TextoAlternativa": "França", "ECorreta": false }
+        ///     { "TextoAlternativa": "Brasil" },
+        ///     { "TextoAlternativa": "Estados Unidos" },
+        ///     { "TextoAlternativa": "França" },
+        ///     { "TextoAlternativa": "Alemanha" },
+        ///     { "TextoAlternativa": "Japão" }
         /// ]
+        /// ]]>
         /// </example>
         [Display(Name = "alternativas")]
         [Required(ErrorMessage = "É necessário fornecer pelo menos uma alternativa.")]
