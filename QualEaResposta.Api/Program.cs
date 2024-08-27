@@ -51,7 +51,7 @@ try
     }
 
     // Configuração do Dashboard do Hangfire
-    app.UseHangfireDashboardWithConfig(configurationManager);
+    app.UseHangfireDashboard("/hangfire");
     var recurringJobManager = app.Services.GetRequiredService<IRecurringJobManager>();
     HangfireJobsConfig.RegisterJobs(recurringJobManager); // Registra os jobs do Hangfire após o servidor ser inicializado
 
