@@ -1,17 +1,17 @@
 <h1 align="center">
-  Qual é a Resposta
+      Qual é a Resposta
 </h1>
 
 <h4 align="center"> 
-	Status do Projeto: Em Desenvolvimento
+	Status do Projeto: em desenvolvimento
 </h4>
 
 <p align="center">
  <a href="#-sobre-o-projeto">Sobre</a> •
- <a href="#-funcionalidades">Funcionalidades</a> •
- <a href="#-como-executar-o-projeto">Como Executar</a> • 
+ <a href="#%EF%B8%8F-funcionalidades">Funcionalidades</a> •
+ <a href="#-como-executar-o-projeto">Como executar</a> • 
  <a href="#-tecnologias">Tecnologias</a> • 
- <a href="#-licença">Licença</a>
+ <a href="#user-content--licença">Licença</a>
 </p>
 
 ## 💻 Sobre o projeto
@@ -61,6 +61,7 @@ Além disso, é recomendado ter um editor para trabalhar com o código, como [Vi
 ### 🎲 Rodando a API
 
 ```bash
+
 # Clone este repositório
 git clone https://github.com/PauloDiegoDeOliveira/qual-e-a-resposta
 
@@ -72,9 +73,15 @@ dotnet run --project QualEaResposta.Api --configuration Release
 
 # A API estará disponível na porta:44304 - acesse http://localhost:44304
 
-🎯 Executando Benchmarks
+```
+
+---
+
+## 🎯 Executando Benchmarks
 
 Para executar os benchmarks e avaliar o desempenho da aplicação, siga os passos abaixo:
+
+```bash
 
 # Navegue até o diretório de benchmarks
 cd QualEaResposta.Benchmarks
@@ -85,35 +92,46 @@ dotnet build -c Release
 # Execute o benchmark
 dotnet run -c Release
 
-🛠 Tecnologias
+```
+
+---
+
+## 🛠 Tecnologias
 
 As seguintes ferramentas e bibliotecas foram utilizadas na construção do projeto:
 
-Backend
-.NET 8
-C#
-Entity Framework Core - ORM para .NET
-SQL Server - Banco de dados relacional
-SignalR - Comunicação em tempo real
-Hangfire - Tarefas em segundo plano
-AutoMapper - Mapeamento de objetos
-Serilog - Logging estruturado
-Polly - Resiliência e políticas de retry
-FluentValidation - Validação de dados
-BenchmarkDotNet - Benchmark de desempenho
+#### **Backend**
 
-Utilitários
+- [C#](https://docs.microsoft.com/pt-br/dotnet/csharp/)
+- **Entity Framework Core** para mapeamento objeto-relacional (ORM).
+- **SQL Server** como banco de dados.
+- **AutoMapper** para mapeamento de objetos.
+- **Serilog** para logging estruturado.
+- **Polly** para implementação de resiliência e políticas de retry.
+- **SignalR** para comunicação em tempo real.
+- **Hangfire** para gerenciamento de tarefas em segundo plano.
+- **FluentValidation** para validação de dados.
+- **BenchmarkDotNet** para análise de desempenho.
 
-IDE: Visual Studio
-Editor: Visual Studio Code
-Teste de API: Postman
+---
 
-📚 Conceitos e Arquitetura
+#### [](https://github.com/tgmarinho/Ecoleta#utilit%C3%A1rios)**Utilitários**
 
-Onion Architecture - Arquitetura que promove separação de preocupações e alta testabilidade.
-Clean Code - Padrões para um código legível, eficiente e de fácil manutenção.
+- **IDE: Visual Studio**
+- **Editor: Visual Studio Code**
+- **Teste de API: Postman**
 
-📝 Licença
+## 📚 Conceitos e Arquitetura
+
+- **Onion Architecture** - Arquitetura que promove separação de preocupações e alta testabilidade.
+- **Clean Code** - Padrões para um código legível, eficiente e de fácil manutenção.
+
+---
+
+## 📝 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+
+---
+
 Desenvolvido por Paulo Diego de Oliveira 🐭 (1984-2024).
