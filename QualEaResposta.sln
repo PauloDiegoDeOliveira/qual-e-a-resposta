@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualEaResposta.Domain.Servi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualEaResposta.Infrastructure", "QualEaResposta.Infrastructure\QualEaResposta.Infrastructure.csproj", "{56D5CB4E-C986-4E79-AE54-6BAC2101418B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualEaResposta.Domain.Core", "QualEaResposta.Domain.Core\QualEaResposta.Domain.Core.csproj", "{7E7D4C7D-C120-4B37-94EA-6FBF58FB43A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualEaResposta.Domain.Core", "QualEaResposta.Domain.Core\QualEaResposta.Domain.Core.csproj", "{7E7D4C7D-C120-4B37-94EA-6FBF58FB43A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualEaResposta.Benchmarks", "QualEaResposta.Benchmarks\QualEaResposta.Benchmarks.csproj", "{55FADE68-6862-4145-88BC-3D023DF17D5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{7E7D4C7D-C120-4B37-94EA-6FBF58FB43A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E7D4C7D-C120-4B37-94EA-6FBF58FB43A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E7D4C7D-C120-4B37-94EA-6FBF58FB43A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55FADE68-6862-4145-88BC-3D023DF17D5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55FADE68-6862-4145-88BC-3D023DF17D5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55FADE68-6862-4145-88BC-3D023DF17D5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55FADE68-6862-4145-88BC-3D023DF17D5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

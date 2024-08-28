@@ -1,0 +1,12 @@
+﻿global using Asp.Versioning;
+global using BenchmarkDotNet.Attributes;
+global using BenchmarkDotNet.Running;
+global using Microsoft.AspNetCore.Hosting;
+global using Microsoft.AspNetCore.SignalR;
+global using Microsoft.Extensions.FileProviders;
+global using QualEaResposta.Api.Hubs;
+global using QualEaResposta.Api.V1.Controllers;
+global using QualEaResposta.Benchmarks.Mocks;
+global using QualEaResposta.Benchmarks.V1.Controllers;
+global using QualEaResposta.Domain.Core.Interfaces.Services;
+global using System.Security.Claims;
