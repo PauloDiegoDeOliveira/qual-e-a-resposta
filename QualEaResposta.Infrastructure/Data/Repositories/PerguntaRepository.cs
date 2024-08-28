@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Logging; // Adicione este namespace
-
-namespace QualEaResposta.Infrastructure.Data.Repositories
+﻿namespace QualEaResposta.Infrastructure.Data.Repositories
 {
     /// <summary>
     /// Inicializa uma nova instância da classe <see cref="PerguntaRepository"/>.

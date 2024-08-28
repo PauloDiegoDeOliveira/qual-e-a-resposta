@@ -10,8 +10,9 @@
         /// Simula a notificação de uma mensagem genérica.
         /// </summary>
         /// <param name="mensagem">A mensagem a ser notificada.</param>
-        public void Notificar(string mensagem)
+        public static void Notificar(string mensagem)
         {
+            ArgumentNullException.ThrowIfNull(mensagem);
             // Implementação simulada
         }
 
@@ -21,19 +22,13 @@
         /// <returns>
         /// <c>true</c> se houver notificações pendentes; caso contrário, <c>false</c>.
         /// </returns>
-        public bool TemNotificacao()
-        {
-            return false; // Simulação de retorno
-        }
+        public static bool TemNotificacao() => false; // Simulação de retorno
 
         /// <summary>
         /// Obtém a lista de notificações pendentes.
         /// </summary>
         /// <returns>Uma lista de mensagens de notificação.</returns>
-        public List<string> ObterNotificacoes()
-        {
-            return new List<string>(); // Simulação de retorno
-        }
+        public static List<string> ObterNotificacoes() => []; // Simulação de retorno
 
         /// <summary>
         /// Simula a notificação de uma mensagem de erro.
