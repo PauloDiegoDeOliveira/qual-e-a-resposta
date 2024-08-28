@@ -62,7 +62,7 @@ Além disso, é recomendado ter um editor para trabalhar com o código, como [Vi
 
 ```bash
 # Clone este repositório
-$ git clone https://github.com/seu-usuario/seu-repositorio.git
+$ git clone https://github.com/PauloDiegoDeOliveira/qual-e-a-resposta
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd qual-e-a-resposta
@@ -70,12 +70,12 @@ $ cd qual-e-a-resposta
 # Execute a aplicação
 $ dotnet run --project QualEaResposta.Api --configuration Release
 
-# A API estará disponível na porta:44348 - acesse http://localhost:44348
+# A API estará disponível na porta:44304 - acesse http://localhost:44304
 
-### 🎯 Executando Benchmarks
-
+🎯 Executando Benchmarks
 Para executar os benchmarks e avaliar o desempenho da aplicação, siga os passos abaixo:
 
+```bash
 # Navegue até o diretório de benchmarks
 $ cd QualEaResposta.Benchmarks
 
@@ -85,33 +85,34 @@ $ dotnet build -c Release
 # Execute o benchmark
 $ dotnet run -c Release
 
-### 🛠 Tecnologias
+🛠 Tecnologias
 As seguintes ferramentas e bibliotecas foram utilizadas na construção do projeto:
 
 Backend
-- **.NET 8
-- **C#
-- **Entity Framework Core - ORM para .NET
-- **SQL Server - Banco de dados relacional
-- **SignalR - Comunicação em tempo real
-- **Hangfire - Tarefas em segundo plano
-- **AutoMapper - Mapeamento de objetos
-- **Serilog - Logging estruturado
-- **Polly - Resiliência e políticas de retry
-- **FluentValidation - Validação de dados
-- **BenchmarkDotNet - Benchmark de desempenho
+- **.NET 8**
+- **C#**
+- **Entity Framework Core - ORM para .NET**
+- **SQL Server - Banco de dados relacional**
+- **SignalR - Comunicação em tempo real**
+- **Hangfire - Tarefas em segundo plano**
+- **AutoMapper - Mapeamento de objetos**
+- **Serilog - Logging estruturado**
+- **Polly - Resiliência e políticas de retry**
+- **FluentValidation - Validação de dados**
+- **BenchmarkDotNet - Benchmark de desempenho**
 
-### Utilitários
-- **IDE: Visual Studio
-- **Editor: Visual Studio Code
-- **Teste de API: Postman
+**Utilitários**
 
-### 📚 Conceitos e Arquitetura
+IDE: Visual Studio
+- **Editor: Visual Studio Code**
+- **Teste de API: Postman**
 
-- **Onion Architecture - Arquitetura que promove separação de preocupações e alta testabilidade.
-- **Clean Code - Padrões para um código legível, eficiente e de fácil manutenção.
+📚 Conceitos e Arquitetura
 
-### 📝 Licença
+- **Onion Architecture** - Arquitetura que promove separação de preocupações e alta testabilidade.
+- **Clean Code** - Padrões para um código legível, eficiente e de fácil manutenção.
+
+📝 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
