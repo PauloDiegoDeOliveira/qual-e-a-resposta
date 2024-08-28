@@ -16,7 +16,7 @@
 
 ## 💻 Sobre o projeto
 
-"Qual é a Resposta" é uma API desenvolvida em .NET 8 que consome o ChatGPT para obter respostas a partir das perguntas enviadas, seja com alternativas ou sem.. O projeto adota a Onion Architecture, garantindo um design modular e sustentável, com foco em boas práticas de desenvolvimento e Clean Code.
+"Qual é a Resposta" é uma API desenvolvida em .NET 8 que consome o ChatGPT para obter respostas a partir das perguntas enviadas, seja com alternativas ou sem. O projeto adota a Onion Architecture, garantindo um design modular e sustentável, com foco em boas práticas de desenvolvimento e Clean Code.
 
 A aplicação utiliza uma variedade de tecnologias modernas, incluindo:
 
@@ -62,58 +62,58 @@ Além disso, é recomendado ter um editor para trabalhar com o código, como [Vi
 
 ```bash
 # Clone este repositório
-$ git clone https://github.com/PauloDiegoDeOliveira/qual-e-a-resposta
+git clone https://github.com/PauloDiegoDeOliveira/qual-e-a-resposta
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd qual-e-a-resposta
+cd qual-e-a-resposta
 
 # Execute a aplicação
-$ dotnet run --project QualEaResposta.Api --configuration Release
+dotnet run --project QualEaResposta.Api --configuration Release
 
 # A API estará disponível na porta:44304 - acesse http://localhost:44304
 
 🎯 Executando Benchmarks
+
 Para executar os benchmarks e avaliar o desempenho da aplicação, siga os passos abaixo:
 
 # Navegue até o diretório de benchmarks
-$ cd QualEaResposta.Benchmarks
+cd QualEaResposta.Benchmarks
 
 # Compile o projeto em modo Release
-$ dotnet build -c Release
+dotnet build -c Release
 
 # Execute o benchmark
-$ dotnet run -c Release
+dotnet run -c Release
 
 🛠 Tecnologias
+
 As seguintes ferramentas e bibliotecas foram utilizadas na construção do projeto:
 
 Backend
-- **.NET 8**
-- **C#**
-- **Entity Framework Core - ORM para .NET**
-- **SQL Server - Banco de dados relacional**
-- **SignalR - Comunicação em tempo real**
-- **Hangfire - Tarefas em segundo plano**
-- **AutoMapper - Mapeamento de objetos**
-- **Serilog - Logging estruturado**
-- **Polly - Resiliência e políticas de retry**
-- **FluentValidation - Validação de dados**
-- **BenchmarkDotNet - Benchmark de desempenho**
+.NET 8
+C#
+Entity Framework Core - ORM para .NET
+SQL Server - Banco de dados relacional
+SignalR - Comunicação em tempo real
+Hangfire - Tarefas em segundo plano
+AutoMapper - Mapeamento de objetos
+Serilog - Logging estruturado
+Polly - Resiliência e políticas de retry
+FluentValidation - Validação de dados
+BenchmarkDotNet - Benchmark de desempenho
 
-**Utilitários**
+Utilitários
 
 IDE: Visual Studio
-- **Editor: Visual Studio Code**
-- **Teste de API: Postman**
+Editor: Visual Studio Code
+Teste de API: Postman
 
 📚 Conceitos e Arquitetura
 
-- **Onion Architecture** - Arquitetura que promove separação de preocupações e alta testabilidade.
-- **Clean Code** - Padrões para um código legível, eficiente e de fácil manutenção.
+Onion Architecture - Arquitetura que promove separação de preocupações e alta testabilidade.
+Clean Code - Padrões para um código legível, eficiente e de fácil manutenção.
 
 📝 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
-
 Desenvolvido por Paulo Diego de Oliveira 🐭 (1984-2024).
-
