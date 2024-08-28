@@ -35,7 +35,7 @@ A aplicação utiliza uma variedade de tecnologias modernas, incluindo:
 
 ## ⚙️ Funcionalidades
 
-- [x] Cadastro, Atualização, Remoção e Consulta de reservas.
+- [x] Obter respostas a partir das perguntas enviadas, seja com alternativas ou sem.
 - [x] Comunicação em tempo real com SignalR.
 - [x] Execução de tarefas em segundo plano com Hangfire.
 - [x] Logging estruturado e detalhado com Serilog.
@@ -69,7 +69,7 @@ git clone https://github.com/PauloDiegoDeOliveira/qual-e-a-resposta
 cd qual-e-a-resposta
 
 # Execute a aplicação
-dotnet run --project QualEaResposta.Api --configuration Release
+dotnet run --project QualEaResposta.Api
 
 # A API estará disponível na porta:44304 - acesse http://localhost:44304
 
