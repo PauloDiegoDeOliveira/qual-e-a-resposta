@@ -23,6 +23,7 @@ try
     builder.Services.AddVersionConfiguration();
     builder.Services.AddHealthChecksConfiguration(configurationManager);
     builder.Services.AddHangfireConfiguration(builder.Configuration);
+    builder.Services.AddSignalR();
     builder.Services.Configure<ApiBehaviorOptions>(options => { options.SuppressModelStateInvalidFilter = true; });
 
     // Construção da aplicação Web
@@ -61,6 +62,7 @@ try
     app.UseSwaggerConfiguration(provider); // Passando o provider para configuração do Swagger
     app.UseDatabaseConfiguration(); // Middleware de configuração do banco de dados
     app.UseHealthChecksConfiguration(); // Health Checks devem ser configurados antes dos endpoints
+    app.MapHub<MessageHub>("/messageHub"); // Mapear o hub do SignalR
     app.MapControllers(); // Mapeia os endpoints do controlador
 
     // Iniciando a aplicação

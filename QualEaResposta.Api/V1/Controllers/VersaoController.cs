@@ -9,14 +9,17 @@
     /// <param name="environment">O ambiente de hospedagem da aplicação.</param>
     /// <param name="notificationService">O serviço de notificação para gerenciar mensagens de erro e sucesso.</param>
     /// <param name="user">O serviço de usuário para gerenciar informações do usuário autenticado.</param>
+    /// <param name="hubContext">O contexto do SignalR Hub para comunicação em tempo real.</param>
     [ApiVersion("1.0")]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     public class VersaoController(IWebHostEnvironment environment,
                                   INotificationService notificationService,
-                                  IUser user) : MainController(notificationService, user)
+                                  IUser user,
+                                  IHubContext<MessageHub> hubContext) : MainController(notificationService, user)
     {
         private readonly IWebHostEnvironment _environment = environment;
+        private readonly IHubContext<MessageHub> _hubContext = hubContext;
 
         /// <summary>
         /// Informa a versão da API e o ambiente de execução atual.
@@ -26,7 +29,7 @@
         [HttpGet]
         [ProducesResponseType(typeof(ViewApiVersionDto), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult Valor(ApiVersion version)
+        public async Task<IActionResult> ValorAsync(ApiVersion version)
         {
             if (version == null)
             {
@@ -45,6 +48,10 @@
             if (OperacaoValida())
             {
                 NotificarMensagem("Versão da API retornada com sucesso.");
+
+                // Enviando o objeto versionInfo serializado como JSON para todos os clientes conectados
+                await _hubContext.Clients.All.SendAsync("ReceiveMessageGetAll", JsonConvert.SerializeObject(versionInfo));
+
                 return ResponderPadronizado(versionInfo);
             }
 

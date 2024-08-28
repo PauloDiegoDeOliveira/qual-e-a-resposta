@@ -27,6 +27,9 @@ namespace QualEaResposta.Api.Configuration
 
             #region Serviços Singleton
 
+            // Registra o MessageHub como um serviço Singleton
+            services.AddSingleton<MessageHub>();
+
             // Acesso ao contexto HTTP
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
