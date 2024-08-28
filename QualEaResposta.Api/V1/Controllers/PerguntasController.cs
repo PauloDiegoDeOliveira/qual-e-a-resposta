@@ -71,9 +71,9 @@
                                                .Cast<string?>()
                                                .ToList();
 
-            _logger.Information("Iniciando lógica para criar pergunta e persistir no banco de dados.");
-
             #region Lógica para criar pergunta e persistir no banco de dados
+
+            // _logger.Information("Iniciando lógica para criar pergunta e persistir no banco de dados.");
 
             // ViewPerguntaDto? createdPerguntaDTO = await _perguntaService.CreatePerguntaAsync(perguntaDTO.TextoPergunta, alternativasTexto);
 
@@ -90,9 +90,9 @@
 
             #endregion Lógica para criar pergunta e persistir no banco de dados
 
-            _logger.Information("Iniciando lógica para obter resposta do ChatGPT.");
-
             #region Lógica para obter resposta do ChatGPT e retornar ao cliente
+
+            _logger.Information("Iniciando lógica para obter resposta do ChatGPT.");
 
             // Chama o serviço do ChatGPT para obter a resposta correta com base na pergunta e alternativas
             string resposta = await _chatGPTService.GetCorrectAnswerAsync(perguntaDTO.TextoPergunta, alternativasTexto);
