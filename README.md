@@ -75,7 +75,6 @@ $ dotnet run --project QualEaResposta.Api --configuration Release
 🎯 Executando Benchmarks
 Para executar os benchmarks e avaliar o desempenho da aplicação, siga os passos abaixo:
 
-```bash
 # Navegue até o diretório de benchmarks
 $ cd QualEaResposta.Benchmarks
 
