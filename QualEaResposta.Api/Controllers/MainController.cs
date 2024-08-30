@@ -6,10 +6,6 @@
     [ApiController]
     public abstract class MainController : ControllerBase
     {
-        private const string SUCESSO = "sucesso";
-        private const string MENSAGEM = "mensagem";
-        private const string DADOS = "dados";
-
         /// <summary>
         /// Serviço de notificação para gerenciar mensagens e erros.
         /// </summary>
