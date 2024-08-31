@@ -36,6 +36,7 @@ A aplicação utiliza uma variedade de tecnologias modernas, incluindo:
 ## ⚙️ Funcionalidades
 
 - [x] Obter respostas a partir das perguntas enviadas, seja com alternativas ou sem.
+- [x] Testes para autenticação e autorização com Identity .Net 8 - EASY AUTH
 - [x] Comunicação em tempo real com SignalR.
 - [x] Execução de tarefas em segundo plano com Hangfire.
 - [x] Logging estruturado e detalhado com Serilog.
