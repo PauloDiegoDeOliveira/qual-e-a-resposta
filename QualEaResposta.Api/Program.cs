@@ -1,3 +1,5 @@
+using QualEaResposta.Domain.Model;
+
 try
 {
     WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -63,6 +65,7 @@ try
     app.UseDatabaseConfiguration(); // Middleware de configuração do banco de dados
     app.UseHealthChecksConfiguration(); // Health Checks devem ser configurados antes dos endpoints
     app.MapHub<MessageHub>("/messageHub"); // Mapear o hub do SignalR
+    app.MapIdentityApi<Usuario>(); // Mapear a API de identidade com a classe Usuario
     app.MapControllers(); // Mapeia os endpoints do controlador
 
     // Iniciando a aplicação

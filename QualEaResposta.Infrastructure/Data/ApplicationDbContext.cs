@@ -4,6 +4,7 @@
     {
         public DbSet<Pergunta> Perguntas { get; set; }
         public DbSet<Alternativa> Alternativas { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -1,4 +1,6 @@
-﻿using QualEaResposta.Application.DTOs;
+﻿using Microsoft.AspNetCore.Identity;
+using QualEaResposta.Application.DTOs;
+using QualEaResposta.Domain.Model;
 
 namespace QualEaResposta.Api.Configuration
 {
@@ -54,6 +56,19 @@ namespace QualEaResposta.Api.Configuration
             services.Configure<OpenAIConfig>(configuration.GetSection("OpenAIConfig"));
 
             #endregion Configurações de OpenAI a partir do arquivo de configuração (appsettings.json)
+
+            #region Configuração de Autenticação e Autorização
+
+            services.AddAuthentication()
+                    .AddBearerToken(IdentityConstants.BearerScheme); // Configura a autenticação usando tokens Bearer
+
+            services.AddAuthorizationBuilder(); // Adiciona serviços de autorização padrão
+
+            services.AddIdentityCore<Usuario>() // Configura a identidade para a classe Usuario
+                    .AddEntityFrameworkStores<ApplicationDbContext>() // Configura a integração com o Entity Framework
+                    .AddApiEndpoints(); // Adiciona endpoints da API específicos para a identidade
+
+            #endregion Configuração de Autenticação e Autorização
         }
     }
 }
