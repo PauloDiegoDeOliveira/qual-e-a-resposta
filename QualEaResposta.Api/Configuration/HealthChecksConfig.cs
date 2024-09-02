@@ -1,7 +1,4 @@
-﻿using System.Net.NetworkInformation;
-using System.Net.Sockets;
-
-namespace QualEaResposta.Api.Configuration
+﻿namespace QualEaResposta.Api.Configuration
 {
     /// <summary>
     /// Configurações de Health Checks para a aplicação.

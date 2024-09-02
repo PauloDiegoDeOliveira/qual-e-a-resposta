@@ -36,6 +36,8 @@ global using System.ComponentModel.DataAnnotations;
 global using System.Diagnostics;
 global using System.Globalization;
 global using System.Net.Mime;
+global using System.Net.NetworkInformation;
+global using System.Net.Sockets;
 global using System.Reflection;
 global using System.Text.Json.Serialization;
 global using ILogger = Serilog.ILogger;
