@@ -43,14 +43,15 @@ try
     }
     else
     {
-        app.UseCors(app.Environment.IsStaging() ? "Staging" : "Production");
+        string corsPolicy = app.Environment.IsStaging() ? "Staging" : "Production";
+        app.UseCors(corsPolicy);
+
+        app.UseHttpsRedirection();
 
         if (app.Environment.IsProduction())
         {
             app.UseHsts();
         }
-
-        app.UseHttpsRedirection();
     }
 
     // Configuração do Dashboard do Hangfire
